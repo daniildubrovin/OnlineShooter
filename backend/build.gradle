@@ -12,4 +12,5 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
 java.targetCompatibility = JavaVersion.VERSION_1_8
