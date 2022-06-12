@@ -1,18 +1,12 @@
 package com.dubr0vin.onlineshooter.activities;
 
-import android.opengl.GLES20;
-import android.opengl.GLES30;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dubr0vin.onlineshooter.R;
-
-import java.util.Random;
-
-import javax.microedition.khronos.egl.EGLConfig;
-import javax.microedition.khronos.opengles.GL10;
+import com.dubr0vin.onlineshooter.graphics.Render;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,33 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GLSurfaceView glSurfaceView = findViewById(R.id.main_surface_view);
-        glSurfaceView.setEGLContextClientVersion(3);
+        glSurfaceView.setEGLContextClientVersion(2);
 
-        nRender render = new nRender();
-        glSurfaceView.setRenderer(render);
+        glSurfaceView.setRenderer(new Render());
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
-
-
     }
-}
-
-
-class nRender implements GLSurfaceView.Renderer {
-
-    public void onDrawFrame(GL10 glUnused) {
-        Random rnd  = new Random();
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
-        GLES20.glClearColor(rnd.nextFloat(),rnd.nextFloat(),rnd.nextFloat(),1f);
-    }
-
-    @Override
-    public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
-
-    }
-
-    @Override
-    public void onSurfaceChanged(GL10 gl10, int width, int height) {
-        GLES20.glViewport(0,0,width,height);
-    }
-
 }
