@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-   <TextView
-       android:text="@string/app_name"
+   <android.opengl.GLSurfaceView
+       android:id="@+id/main_surface_view"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
 
