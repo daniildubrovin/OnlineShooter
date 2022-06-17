@@ -2,7 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
-      <module name="OnlineShooter.app" target="11" />
+      <module name="OnlineShooter.app" target="18" />
+      <module name="OnlineShooter.backend.main" target="8" />
+      <module name="OnlineShooter.backend.test" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
